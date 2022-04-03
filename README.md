@@ -1,6 +1,14 @@
 # 100_days_of_Python
 
 Projects from Angela Yu's "100 Days of Python" on udemy.
+Day 1 - Band Name Generator (Strong Concatenation) 
+Day 2 - Tip Calculator
+Day 3 - Treasure Island (If/Else Tree)
+Day 4 - Rock Paper Scissors
+Day 5 - Password Generator
+Day 6 - Reeborg Escape Maze Algorithm
+Day 7 - Hangman
+Day 8 - Caesar Cypher
 
 #Technologies
 - Python
