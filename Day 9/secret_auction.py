@@ -1,5 +1,6 @@
 # Day 9 of Angela Yu's "100 Days of Python" on udemy.
 
+import os
 from art import logo
 add_bidder = True
 bids = {}
@@ -22,6 +23,7 @@ while add_bidder:
     bids[name] = bid
 
     more_bidders = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
+    os.system("clear")
     if more_bidders == "no":
         add_bidder = False
 
