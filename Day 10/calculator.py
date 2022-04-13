@@ -22,13 +22,8 @@ def divide(num1, num2):
     quotent = num1 / num2
     return quotent
 
-def more_calculations(response):
-    if not response == "Y":
-        calculate = False
-
 # Calulator Logic
 first_digit = int(input("What's the first number?:\n"))
-# response = input(f"Type 'Y' to continue calculating with {final}, or type 'N' to start a new calculation.").upper()
 
 while calculate == True:
     operation = input("Pick an operation: + - * /: \n")
@@ -37,7 +32,6 @@ while calculate == True:
         final = add(first_digit, second_digit)
         print(final)
         first_digit = final
-        # more_calculations()
     elif operation == "-":
         final = subtract(first_digit, second_digit)
         print(final)
@@ -50,3 +44,6 @@ while calculate == True:
         final = divide(first_digit, second_digit)
         print(final)
         first_digit = final
+    response = input(f"Type 'Y' to continue calculating with {final}, or type 'N' to start a new calculation.\n").upper()
+    if response == "N":
+        calculate = False
