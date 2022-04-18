@@ -33,17 +33,18 @@ def deal_card():
     return card
 
 def ace(hand):
-    print(hand)
     if 11 in hand and sum(hand) > 21:
         hand.remove(11)
         hand.append(1)
         print(hand)
         return sum(hand)
+    else:
+        return sum(hand)
 
 def deal(player, player_total):
     player.append(random.choice(cards))
-    player_total = sum(player)
-    # player_total = ace(player)
+    # player_total = sum(player)
+    player_total = ace(player)
     if bust(player_total):
         print (f"BUST! You went over 21!")
         restart()
