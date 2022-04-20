@@ -41,15 +41,15 @@ def ace(hand):
     else:
         return sum(hand)
 
-def deal(player, player_total):
-    player.append(random.choice(cards))
-    # player_total = sum(player)
-    player_total = ace(player)
-    if bust(player_total):
-        print (f"BUST! You went over 21!")
-        restart()
-    print(f"Your current hand is: {player} for a total of {player_total}")
-    return player, player_total
+# def deal(player, player_total):
+#     player.append(random.choice(cards))
+#     # player_total = sum(player)
+#     player_total = ace(player)
+#     if bust(player_total):
+#         print (f"BUST! You went over 21!")
+#         restart()
+#     print(f"Your current hand is: {player} for a total of {player_total}")
+#     return player, player_total
 
 def winner(player_total, computer_total):
     if player_total > computer_total:
@@ -68,7 +68,13 @@ def blackjack():
     print(f"Computer's first card: {computer[0]}")
     add_card = input("Type 'y' to get another card, type 'n' to keep your hand:\n").upper()
     while add_card == "Y":
-        deal(player, player_total)
+        # deal(player, player_total)
+        player.append(random.choice(cards))
+        player_total = ace(player)
+        if bust(player_total):
+            print (f"BUST! You went over 21!")
+            restart()
+        print(f"Your current hand is: {player} for a total of {player_total}")
         add_card = input("Type 'y' to get another card, type 'n' to keep your hand:\n").upper()
     print(f"With a total of {player_total}, your final hand is {player}")
     while computer_total < 17:
