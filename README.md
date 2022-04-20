@@ -9,6 +9,9 @@ Projects from Angela Yu's "100 Days of Python" on udemy.
 - Day 6 - Reeborg Escape Maze Algorithm
 - Day 7 - Hangman
 - Day 8 - Caesar Cypher
+- Day 9 - Secret Auction
+- Day 10 - Calculator
+- Day 11 - Blackjack
 
 #Technologies
 - Python
