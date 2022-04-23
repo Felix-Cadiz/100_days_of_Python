@@ -11,20 +11,17 @@ EASY_MODE = 10
 HARD_MODE = 5
 
 def difficulty():
-    level = input("Choose a difficulty. Type 'easy' or 'hard':\n")
-    if level == "easy":
+    level = input("Choose a difficulty. Type 'easy' or 'hard':\n").upper()
+    if level == "EASY":
         return EASY_MODE
     else:
-        level == "hard"
+        level == "HARD"
         return HARD_MODE
-
-
-guesses = difficulty()
-answer = randint(1, 100)
 
 # Game Logic
 def game():
-    global guesses
+    guesses = difficulty()
+    answer = randint(1, 100)
     print(f"You have {guesses} attempts remaining.")
     attempt = int(input("Make a guess:\n"))
     while not attempt == answer and guesses > 1:
@@ -36,25 +33,18 @@ def game():
             guesses -= 1
             print(f"Too high.\nYou have {guesses} attempts remaining.")
             attempt = int(input("Make a guess:\n"))
-
     if not attempt == answer and guesses == 1:
         print(f"You lose!\nThe answer was {answer}")
-
-    if attempt == answer:
+        reset()
+    else:
         print(f"You got it! The answer was {answer}")
+        reset()
 
 def reset():
-    global guesses
-    global answer
     play_again = input("Would you like to play again? 'Y' or 'N':\n").upper()
     if play_again == "Y":
-        guesses = difficulty()
-        answer = randint(1, 100)
         game()
-        reset()
     else:
         os.system("clear")
 
 game()
-
-reset()
