@@ -3,9 +3,6 @@
 from data import MENU, resources
 import os
 
-# print(MENU)
-# print(resources)
-
 money = 0
 
 def reset():
@@ -31,7 +28,7 @@ def transaction(drink, payment_sum):
             change = payment_sum - MENU[drink]["cost"]
             print(f"Thank you for purchasing, please accept your ${change:.2f} in change.")
         money += round(MENU[drink]["cost"], 2)
-        print(f"The machine now has ${money:.2f}")
+        # print(f"The machine now has ${money:.2f}")
         return True
 
 def resource_check(drink):
@@ -66,7 +63,7 @@ def selection(drink):
         if resource_check(drink):
             print("Please insert coins:")
             payment_sum = payment()
-            if transaction(drink, payment_sum) == True:
+            if transaction(drink, payment_sum):
                 make_coffee(drink)
                 reset()
         else: 
