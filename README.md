@@ -12,6 +12,16 @@ Projects from Angela Yu's "100 Days of Python" on udemy.
 - Day 9 - Secret Auction
 - Day 10 - Calculator
 - Day 11 - Blackjack
+- Day 12 - Guess the Number
+- Day 13 - Debugging Examples
+- Day 14 - Higher or Lower? Follower Count
+- Day 15 - Coffee Machine
+- Day 16 - Coffee Machine OOP
+- Day 17 - Quiz Game OOP
+
+#To Run
+- Fork the individual file
+- Select and run on your favorite Python interpreter
 
 #Technologies
 - Python
