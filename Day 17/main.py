@@ -1,13 +1,15 @@
 # Day 17 of Angela Yu's "100 Days of Python" on udemy.
 
-class User:
-    def __init__(self, user_id, username):
-        self.id = user_id
-        self.username = username
-        self.followers = 0
+from data import question_data
+from question_model import Question
+from quiz_brain import QuizBrain
 
-user_1 = User("001", "Felix")
+question_bank = []
+for question in question_data:
+    question_text = question["text"]
+    question_answer = question["answer"]
+    individual_question = Question(question_text, question_answer)
+    question_bank.append(individual_question)
 
-print(user_1.username)
-
-user_2 = User("002", "Regina")
+quiz = QuizBrain(question_bank)
+quiz.next_question()
