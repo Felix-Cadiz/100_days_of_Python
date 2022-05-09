@@ -1,20 +1,28 @@
 from turtle import Turtle, Screen
+import random
 
-timmy_the_turtle = Turtle()
-timmy_the_turtle.shape("turtle")
-timmy_the_turtle.color("red")
-counter = 0
-box = 0
+t = Turtle()
+# t.shape("turtle")
+t.pensize(1)
+t.speed("fastest")
 
-while counter < 40:
-    timmy_the_turtle.forward(2)
-    timmy_the_turtle.left(2)
-    counter += 1
-    box += 1
-    if box % 4 == 0:
-        timmy_the_turtle.left(45)
-        timmy_the_turtle.forward(100)
+s = Screen()
+s.colormode(255)
+s.bgcolor("black")
 
+def color_param():
+    r = int(random.randint(0,255))
+    g = int(random.randint(0,255))
+    b = int(random.randint(0,255))
+    random_color = (r, g, b)
+    return random_color
 
-screen = Screen()
-screen.exitonclick()
+def draw_spirograph(gap_size):
+    for i in range(1000):
+        t.color(color_param())
+        t.circle(i + 1)
+        t.left(gap_size * 2)
+
+draw_spirograph(2)
+
+s.exitonclick()
