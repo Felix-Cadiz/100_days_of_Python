@@ -1,3 +1,5 @@
+# Module to use random colors throughout the project.
+
 import random
 
 class Colors: 

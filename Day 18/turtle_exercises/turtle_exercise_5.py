@@ -1,3 +1,5 @@
+# Create a moving spirograph with Turtle
+
 from turtle import Turtle, Screen
 import random
 
